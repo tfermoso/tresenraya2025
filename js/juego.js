@@ -1,5 +1,15 @@
 var turno = "X";
 var celdas = document.querySelectorAll('.celda');
+$(".celda").click(function () {
+    if($(this).html() == '') {
+        $(this).html(turno);
+        comprobarGanador();
+        turno = (turno == "X") ? "O" : "X";
+    }
+})
+
+
+/*
 celdas.forEach(function (celda) {
     celda.onclick = function () {
         if(this.innerHTML == '') {
@@ -12,6 +22,7 @@ celdas.forEach(function (celda) {
     }
 }
 );
+*/
 function comprobarGanador() {
     celdasArray=[celdas[0].innerHTML,celdas[1].innerHTML,celdas[2].innerHTML,
                 celdas[3].innerHTML,celdas[4].innerHTML,celdas[5].innerHTML,
